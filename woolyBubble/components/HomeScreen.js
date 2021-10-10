@@ -1,10 +1,14 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { View, Text, StyleSheet, Button, Alert, TouchableOpacity } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { ActivityIndicator } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { useFonts, Pacifico_400Regular } from '@expo-google-fonts/pacifico';
+import { Formik } from 'formik';
+import { Octicons, Ionicons, Fontisto} from '@expo/vector-icons';
+import * as Google from 'expo-google-app-auth'
+
+import HomeInfoBar from './HomeInfoBar';
 
 // Styles
 import { 
@@ -17,17 +21,12 @@ import {
     StyledFormArea,
     SubTitle} from './styles'
 
-import HomeInfoBar from './HomeInfoBar';
-import { Formik } from 'formik';
-
-import { Octicons, Ionicons, Fontisto} from '@expo/vector-icons';
-
-import * as Google from 'expo-google-app-auth'
-
 export const {pink, lightgreen, darkgreen, gray, blue, white, green} = Colors;
 
-
 export default function HomeScreen({navigation}) {
+    let [fontsLoaded] = useFonts({
+        Pacifico_400Regular,
+      });
 
     const [message, setMessage] = useState();
     const [messageType, setMessageType] = useState();
@@ -78,7 +77,7 @@ export default function HomeScreen({navigation}) {
         
         <InnerContainer>
             <View style={styles.HomeScreenTitle}>
-                <PageTitle>Wolly Bubble</PageTitle>
+                <Text style={styles.HomePageTitle}>Wolly Bubble!</Text>
                 <SubTitle>Encontre o hotel dos sonhos pelo menor preço</SubTitle>
 
                 <View style={styles.HomeScreenImage}>
@@ -135,5 +134,13 @@ const styles = StyleSheet.create({
         //bottom: 1,
         //height: '30%',
         width: '100%'
+    },
+    HomePageTitle: { // redo style in styles.js to add font
+        fontSize: 50,
+        textAlign: 'center',
+        //fontWeight: bold,
+        color: pink,
+        // padding: '10%',
+        fontFamily: 'Pacifico_400Regular'
     }
 })

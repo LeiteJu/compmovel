@@ -40,6 +40,7 @@ export const SubTitle = styled.Text`
     margin-bottom: 20px;
     letter-spacing: 1px;
     font-weight: bold;
+    text-align: center;
     color: ${darkgreen};
 `;
 
