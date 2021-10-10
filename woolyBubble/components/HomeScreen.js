@@ -77,9 +77,10 @@ export default function HomeScreen({navigation}) {
         
         <InnerContainer>
             <View style={styles.HomeScreenTitle}>
-                <Text style={styles.HomePageTitle}>Wolly Bubble!</Text>
+               <Text style={{fontFamily: 'Pacifico_400Regular'}}></Text>
+                <Text style={{... styles.HomePageTitle, fontFamily: 'Pacifico_400Regular'}}>Wolly Bubble!</Text>
                 <SubTitle>Encontre o hotel dos sonhos pelo menor preço</SubTitle>
-
+                
                 <View style={styles.HomeScreenImage}>
                     <FontAwesome5 name="hotel" size={250} color="#FCBBCF" />
                 </View>
@@ -141,6 +142,6 @@ const styles = StyleSheet.create({
         //fontWeight: bold,
         color: pink,
         // padding: '10%',
-        fontFamily: 'Pacifico_400Regular'
+        //fontFamily: 'Pacifico_400Regular'
     }
 })
