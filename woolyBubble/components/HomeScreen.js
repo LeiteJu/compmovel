@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Button, Alert, TouchableOpacity } from 'react-n
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { ActivityIndicator } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 // Styles
 import { 
@@ -52,13 +53,15 @@ export default function HomeScreen({navigation}) {
                 if (type == 'success') {
                     const {email, name, photoUrl} = user;
                     Alert.alert(`Seja bem vindo(a),  ${name}`);
-                    handleMessage(`Seja bem vindo(a),  ${name}`)
+                    handleMessage(`Seja bem vindo(a),  ${name}`);
                     // setTimeout(() => Alert.alert("Timeout"))
+                    navigation.navigate('Selection');
                 } else {
                     Alert.alert("Login falhou :(")
                     handleMessage('Google Signin was cancelled');
                 }
                 setGoogleSubmitting(false);
+                
             })
             .catch(error => {
                 handleMessage('An error occurred. Check your network and try again');
@@ -68,14 +71,27 @@ export default function HomeScreen({navigation}) {
     };
 
     const faceLogin = function () {
-        Alert.alert("Por favor, aguarde... carregando login do Facebook :)")
+        Alert.alert("Por favor, aguarde... carregando login do Facebook :) not done")
     } 
 
     return (
         
         <InnerContainer>
-            <PageTitle>Wolly Bubble</PageTitle>
+            <View style={styles.HomeScreenTitle}>
+                <PageTitle>Wolly Bubble</PageTitle>
+                <SubTitle>Encontre o hotel dos sonhos pelo menor preço</SubTitle>
+
+                <View style={styles.HomeScreenImage}>
+                    <FontAwesome5 name="hotel" size={250} color="#FCBBCF" />
+                </View>
+            </View>
+           
+
+
+            <View style={styles.HomeScreenLogin}>
+
             <SubTitle>Por favor, faça Login</SubTitle>
+            
             <Formik>
                 <StyledFormArea>
                     <StyledButton google={true} onPress={() => googleLogin()}>
@@ -88,25 +104,36 @@ export default function HomeScreen({navigation}) {
                     </StyledButton>
                 </StyledFormArea>
             </Formik>
-            {/* <View style={styles.container}>
-                <Text>Entre pelo facebook: </Text>
-                <StatusBar style="auto" />
-                <Button title="Ok ok, go to selection" onPress={() => navigation.navigate('Selection') } />
-                <HomeInfoBar navigation={navigation}/>
-            </View> */}
-            <Text>Encontre o hotel dos sonhos pelo menor preço</Text>
-
+            </View>    
+            
         </InnerContainer>
         
     )
 };
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+    HomeScreenTitle: {
+        //marginTop: '15%',
+        flex: 2,
+        backgroundColor: white,
+        paddingTop: '15%',
+        alignSelf: 'stretch'
     },
-  
+    HomeScreenImage: {
+        flex: 3,
+        //backgroundColor: '#fff',
+        paddingTop: '5%',
+        //alignSelf: 'stretch'
+        alignItems: 'center'
+    },
+    HomeScreenLogin: {
+        flex: 1,
+        backgroundColor: '#9bc8b7',
+        paddingTop: '10%',
+        //alignSelf: 'stretch',
+        alignItems: 'center',
+        //bottom: 1,
+        //height: '30%',
+        width: '100%'
+    }
 })

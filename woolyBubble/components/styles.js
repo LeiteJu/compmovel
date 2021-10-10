@@ -28,7 +28,7 @@ export const InnerContainer = styled.View`
 `
 
 export const PageTitle = styled.Text`
-    font-size: 30px;
+    font-size: 50px;
     text-align: center;
     font-weight: bold;
     color: ${pink};
