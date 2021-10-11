@@ -10,9 +10,10 @@ export const Colors = {
     blue: "#1663C7",
     green: "#10B981",
     white: "#ffffff",
+    lightgray: "#E8E8E8",
 }
 
-export const {pink, lightgreen, darkgreen, gray, blue, white, green} = Colors;
+export const {pink, lightgreen, darkgreen, gray, blue, white, green, lightgray} = Colors;
 
 export const ExternalContainer = styled.View`
     flex: 1;
@@ -90,8 +91,85 @@ export const StyledFormArea = styled.View`
     width: 90%;
 `;
 
-export const Picture = styled.View`
-    width: 100px; 
-    height: 100px;
-    borderRadius: 8px;
+export const Picture = styled.Image`
+    width: 90%; 
+    height: 40%;
+    borderRadius: 15px;
 `;
+
+export const Bottom = styled.View`
+    width: 100%;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    background-color:${white};
+    padding: 5%;
+    margin-top: 5%
+`;
+
+export const Box = styled.View`
+    width: 95%;
+    borderRadius: 15px;
+    justify-content: center;
+    align-items: flex-start;
+    background-color:${lightgray};
+    padding: 5%;
+    margin-vertical: 5%;
+`;
+
+export const Line = styled.View`
+    height: 1 px;
+    width: 100%;
+    background-color: ${white};
+    margin-vertical: 10px;
+`;
+
+export const Back = styled.View`
+
+    justify-content: flex-start;
+    align-items: center;
+    background-color: ${pink};
+    padding-top: 5%;
+    padding-bottom: 5%
+`
+
+export const Title = styled.Text`
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: ${darkgreen};
+    padding: 2%;
+`
+export const Resume = styled.Text`
+    font-size: 14px;
+    margin-bottom: 2%;
+    text-align: center;
+    letter-spacing: 1px;
+    color: ${gray};
+
+`
+
+export const Back_Button = styled.TouchableOpacity`
+
+    width: 30%;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    background-color:${lightgreen};
+    padding: 5%;
+    margin: 2%;
+    margin-bottom: 10%
+
+`
+export const Choose_Button = styled.TouchableOpacity`
+
+    width: 60%;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    background-color:${darkgreen};
+    padding: 5%;
+    margin: 2%;
+    margin-bottom: 10%
+
+`

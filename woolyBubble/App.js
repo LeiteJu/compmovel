@@ -28,7 +28,7 @@ function HomeTabs() {
 export default function App() {
   	return (
     <NavigationContainer>
-    	<Stack.Navigator initialRouteName="Hotel1">
+    	<Stack.Navigator initialRouteName="Home">
     		<Stack.Screen name="Home" options={{ title: 'Wooly Bubble', headerShown: false}} component={HomeScreen} />
         <Stack.Screen name="Selection" component={SelectionScreen} />
 			  <Stack.Screen name="Hotel" options={{ title: 'Hotel' }} component={HotelScreen} />
