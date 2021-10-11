@@ -8,6 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './components/HomeScreen';
 import SelectionScreen from './components/SelectionScreen';
 import HotelScreen from './components/HotelScreen';
+import Hotel1Screen from './components/Hotel1Screen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -27,10 +28,11 @@ function HomeTabs() {
 export default function App() {
   	return (
     <NavigationContainer>
-    	<Stack.Navigator initialRouteName="Home">
+    	<Stack.Navigator initialRouteName="Hotel1">
     		<Stack.Screen name="Home" options={{ title: 'Wooly Bubble', headerShown: false}} component={HomeScreen} />
         <Stack.Screen name="Selection" component={SelectionScreen} />
 			  <Stack.Screen name="Hotel" options={{ title: 'Hotel' }} component={HotelScreen} />
+        <Stack.Screen name="Hotel1" options={{ title: 'Japaratinga Lounge Resort' }} component={Hotel1Screen} />
       </Stack.Navigator>
     </NavigationContainer>
   	);

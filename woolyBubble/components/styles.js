@@ -25,6 +25,7 @@ export const InnerContainer = styled.View`
     flex: 1;
     width: 100%;
     align-items: center;
+    background-color:${white}
 `
 
 export const PageTitle = styled.Text`
@@ -87,4 +88,10 @@ export const ButtonText = styled.Text`
 
 export const StyledFormArea = styled.View`
     width: 90%;
+`;
+
+export const Picture = styled.View`
+    width: 100px; 
+    height: 100px;
+    borderRadius: 8px;
 `;

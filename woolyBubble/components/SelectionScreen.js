@@ -17,7 +17,7 @@ export default function SelectionScreen({navigation}) {
                 <Text> Adicionar imagem e link para hotel 1 </Text>
                 <View style={styles.SelectionScreenHotelRow}>
                     <Text> Endereco do hotel 1 </Text>
-                    <Button title="Go to hotel" onPress={() => navigation.navigate('Hotel') } />
+                    <Button title="Go to hotel" onPress={() => navigation.navigate('Hotel1') } />
                 </View>
             </View>
             <View style={styles.SelectionScreenHotel}>
