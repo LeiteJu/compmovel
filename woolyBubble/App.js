@@ -9,30 +9,39 @@ import HomeScreen from './components/HomeScreen';
 import SelectionScreen from './components/SelectionScreen';
 import HotelScreen from './components/HotelScreen';
 import Hotel1Screen from './components/Hotel1Screen';
+import Hotel2Screen from './components/Hotel2Screen';
+import Hotel3Screen from './components/Hotel3Screen';
+// import FavoritesScreen from './components/FavoritesScreen';
+// import BookingScreen from './components/BookingScreen';
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-/*
-function HomeTabs() {  
-  return (   
-  <Tab.Navigator>
-    <Tab.Screen name="Home" component={HomeScreen} />
-    <Tab.Screen name="Selection" component={SelectionScreen} />      
-    <Tab.Screen name="Hotel" component={HotelScreen} />    
-  </Tab.Navigator>  
-  );
-} component={HomeTabs}
-*/
+
+// function HomeTabs() {  
+//   return (   
+//   <Tab.Navigator>
+//     <Tab.Screen name="Selection" component={SelectionScreen} />
+//     <Tab.Screen name="Booking" component={BookingScreen} />      
+//     <Tab.Screen name="Favorites" component={FavoritesScreen} />        
+//   </Tab.Navigator>  
+//   );
+// } component={HomeTabs}
+
 
 export default function App() {
   	return (
     <NavigationContainer>
-    	<Stack.Navigator initialRouteName="Home">
+    	<Stack.Navigator initialRouteName="Selection">
     		<Stack.Screen name="Home" options={{ title: 'Wooly Bubble', headerShown: false}} component={HomeScreen} />
-        <Stack.Screen name="Selection" component={SelectionScreen} />
+        <Stack.Screen name="Selection" options={{headerShown: false }} component={SelectionScreen} />
 			  <Stack.Screen name="Hotel" options={{ title: 'Hotel' }} component={HotelScreen} />
         <Stack.Screen name="Hotel1" options={{ title: 'Japaratinga Lounge Resort' }} component={Hotel1Screen} />
+        <Stack.Screen name="Hotel2" options={{ title: 'Palácio Tangará' }} component={Hotel2Screen} />
+        <Stack.Screen name="Hotel3" options={{ title: 'ModeVie Boutique Hotel' }} component={Hotel3Screen} />
+        {/* <Stack.Screen name="Favorites" options={{ title: 'Favoritos', headerShown: false }} component={FavoritesScreen} />
+        <Stack.Screen name="Booking" options={{ title: 'Booking', headerShown: false}} component={BookingScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   	);

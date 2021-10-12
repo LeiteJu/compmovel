@@ -13,6 +13,8 @@ export const Colors = {
     lightgray: "#E8E8E8",
 }
 
+const mediumgray = '#D6D6D6';
+
 export const {pink, lightgreen, darkgreen, gray, blue, white, green, lightgray} = Colors;
 
 export const ExternalContainer = styled.View`
@@ -173,3 +175,68 @@ export const Choose_Button = styled.TouchableOpacity`
     margin-bottom: 10%
 
 `
+
+export const SelectionScreenHotel = styled.View`
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: ${mediumgray};
+    background-color: ${white};
+    padding-horizontal: 10%;
+    width: 90%;
+    margin: 1%
+`
+
+export const Hotel_Title = styled.Text`
+    font-size: 16px;
+    margin-vertical: 3%;
+    letter-spacing: 1px;
+    color: ${darkgreen}
+`
+
+export const Hotel_image = styled.Image`
+    width: 80%;
+    height: 100px;
+    align-self: center;
+    margin-bottom: 15
+`
+
+export const Welcome_Text = styled.Text`
+    font-size: 15px;
+    margin-bottom: 1%;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 1%
+`
+
+export const Welcome_page = styled.View`
+
+    border-radius: 10px;
+    background-color: ${pink};
+    width: 100%;
+    padding: 3%;
+
+`
+
+export const SelectionScreenColumnHotel = styled.View`
+
+    justify-content: center;
+    border-radius: 20px;
+    align-items:center;
+    width: 100%;
+    background-color: ${white}; 
+
+`
+
+export const GoTo = styled.TouchableOpacity`
+
+    width: 40%;
+    border-radius: 20px;
+    background-color:${darkgreen};
+    padding: 5%;
+    margin: 2%;
+
+
+`
+
+// justify-content: center;
+// align-items: flex-start;
