@@ -4,9 +4,10 @@ import { View, Text, StyleSheet, Button, Alert, TouchableOpacity } from 'react-n
 import { ActivityIndicator } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useFonts, Pacifico_400Regular } from '@expo-google-fonts/pacifico';
+
 import { Formik } from 'formik';
 import { Octicons, Ionicons, Fontisto} from '@expo/vector-icons';
-import * as Google from 'expo-google-app-auth'
+import * as Google from 'expo-google-app-auth';
 
 import HomeInfoBar from './HomeInfoBar';
 
@@ -54,7 +55,7 @@ export default function HomeScreen({navigation}) {
                     Alert.alert(`Seja bem vindo(a),  ${name}`);
                     handleMessage(`Seja bem vindo(a),  ${name}`);
                     // setTimeout(() => Alert.alert("Timeout"))
-                    navigation.navigate('Selection');
+                    navigation.navigate('Selectionn');
                 } else {
                     Alert.alert("Login falhou :(")
                     handleMessage('Google Signin was cancelled');

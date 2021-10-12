@@ -8,29 +8,33 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './components/HomeScreen';
 import SelectionScreen from './components/SelectionScreen';
 import HotelScreen from './components/HotelScreen';
+import FavoritesScreen from './components/FavoritesScreen';
+import BookingScreen from './components/BookingScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-/*
+
 function HomeTabs() {  
   return (   
   <Tab.Navigator>
-    <Tab.Screen name="Home" component={HomeScreen} />
-    <Tab.Screen name="Selection" component={SelectionScreen} />      
-    <Tab.Screen name="Hotel" component={HotelScreen} />    
+    <Tab.Screen name="Selection" component={SelectionScreen} />
+    <Tab.Screen name="Booking" component={BookingScreen} />      
+    <Tab.Screen name="Favorites" component={FavoritesScreen} />    
   </Tab.Navigator>  
   );
 } component={HomeTabs}
-*/
+
 
 export default function App() {
   	return (
     <NavigationContainer>
     	<Stack.Navigator initialRouteName="Home">
     		<Stack.Screen name="Home" options={{ title: 'Wooly Bubble', headerShown: false}} component={HomeScreen} />
-        <Stack.Screen name="Selection" component={SelectionScreen} />
+        <Stack.Screen name="Selectionn" options={{headerShown: false }} component={HomeTabs} />
 			  <Stack.Screen name="Hotel" options={{ title: 'Hotel' }} component={HotelScreen} />
+        <Stack.Screen name="Favorites" options={{ title: 'Favoritos', headerShown: false }} component={FavoritesScreen} />
+        <Stack.Screen name="Booking" options={{ title: 'Booking', headerShown: false}} component={BookingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   	);
