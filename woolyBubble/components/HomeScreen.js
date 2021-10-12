@@ -54,7 +54,7 @@ export default function HomeScreen({navigation}) {
                     Alert.alert(`Seja bem vindo(a),  ${name}`);
                     handleMessage(`Seja bem vindo(a),  ${name}`);
                     // setTimeout(() => Alert.alert("Timeout"))
-                    navigation.navigate('Selection');
+                    navigation.navigate('Selectionn');
                 } else {
                     Alert.alert("Login falhou :(")
                     handleMessage('Google Signin was cancelled');

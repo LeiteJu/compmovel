@@ -4,6 +4,9 @@ import { StyleSheet, Text, View, ActivityIndicator, Image, Button, Alert} from '
 import styled from 'styled-components/native';
 import { Entypo } from '@expo/vector-icons'; 
 import AppLoading from 'expo-app-loading';
+import { FontAwesome5 } from '@expo/vector-icons';
+import {saveStorage, readStorage} from './storage';
+import moment from "moment";
 
 const WEATHER_API_KEY = '07fa2b46fcbf7ac2c2bd778c41ed952a'
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
@@ -25,9 +28,19 @@ import {
   Choose_Button,
   Line
 } from './styles'
+import { setNestedObjectValues } from 'formik';
+
+const doublefuncttion = ({temp}) => {
+  saveStorage({hotel: "Japaratinga Lounge", temp, date: moment().format("DD-MM-YYYY")});
+  Alert.alert("Reserva computada", " Sua reserva foi registra com sucesso. Veja na aba de reservas");
+}
 
 export default function Hotel1Screen({navigation}) {
 
+
+  const value = {
+    hotel: 'Japaratinga', temp: {temp}
+  }
   const [errorMessage, setErrorMessage] = useState(null)
   const [currentWeather, setCurrentWeather] = useState(null)
   const [unitsSystem, setUnitSystem] = useState('metric')  // use imperial for fahrenheit
@@ -35,6 +48,9 @@ export default function Hotel1Screen({navigation}) {
   useEffect(() => {
     load()
   }, [unitsSystem])  // everytime the unitSytem variable change, the api call will be made
+
+
+  
 
   async function load() {
     setCurrentWeather(null)
@@ -73,6 +89,8 @@ export default function Hotel1Screen({navigation}) {
 
     const ICONURL = `http://openweathermap.org/img/w/${icon}.png`
 
+    
+
     return (
       <View>
         <Back>
@@ -90,7 +108,10 @@ export default function Hotel1Screen({navigation}) {
                 <ButtonText>Voltar</ButtonText>
               </Back_Button>
               <Choose_Button>
-                <ButtonText>Reservar agora</ButtonText>
+                <View style={{flexDirection: 'row', justifyContent: 'space-between',}}>
+                  <ButtonText onPress={() => doublefuncttion({temp})}>Reservar agora                     </ButtonText>
+                  <FontAwesome5 name="pencil-alt" size={15} color="#FFF"/>
+                </View>
               </Choose_Button>
             </View>
           </Bottom>
@@ -136,5 +157,9 @@ const styles = StyleSheet.create({
     height: 60,
     width: 60,
   },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  }
   
 });

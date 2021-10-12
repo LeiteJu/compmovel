@@ -4,6 +4,9 @@ import { StyleSheet, Text, View, ActivityIndicator, Image, Button, Alert} from '
 import styled from 'styled-components/native';
 import { Entypo } from '@expo/vector-icons'; 
 import AppLoading from 'expo-app-loading';
+import { FontAwesome5 } from '@expo/vector-icons';
+import {saveStorage, readStorage} from './storage';
+import moment from "moment";
 
 const WEATHER_API_KEY = '07fa2b46fcbf7ac2c2bd778c41ed952a'
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
@@ -25,6 +28,11 @@ import {
   Choose_Button,
   Line
 } from './styles'
+
+const doublefuncttion = ({temp}) => {
+  saveStorage({hotel: "Palácio Tangará", temp, date: moment().format("DD-MM-YYYY")});
+  Alert.alert("Reserva computada", " Sua reserva foi registra com sucesso. Veja na aba de reservas");
+}
 
 export default function Hotel2Screen({navigation}) {
 
@@ -90,7 +98,10 @@ export default function Hotel2Screen({navigation}) {
                 <ButtonText>Voltar</ButtonText>
               </Back_Button>
               <Choose_Button>
-                <ButtonText>Reservar agora</ButtonText>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between',}}>
+                  <ButtonText onPress={() => doublefuncttion({temp})}>Reservar agora                     </ButtonText>
+                  <FontAwesome5 name="pencil-alt" size={15} color="#FFF"/>
+                </View>
               </Choose_Button>
             </View>
           </Bottom>

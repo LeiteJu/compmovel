@@ -101,12 +101,14 @@ export const Picture = styled.Image`
 
 export const Bottom = styled.View`
     width: 100%;
-    border-radius: 20px;
+    height: 60%;
+    border-top-right-radius: 80px;
     justify-content: center;
     align-items: flex-start;
     background-color:${white};
     padding: 5%;
-    margin-top: 5%
+    margin-top: 5%;
+    
 `;
 
 export const Box = styled.View`
@@ -132,7 +134,7 @@ export const Back = styled.View`
     align-items: center;
     background-color: ${pink};
     padding-top: 5%;
-    padding-bottom: 5%
+    padding-bottom: 5%;
 `
 
 export const Title = styled.Text`
@@ -169,6 +171,7 @@ export const Choose_Button = styled.TouchableOpacity`
     border-radius: 20px;
     justify-content: center;
     align-items: flex-start;
+    width: 60%;
     background-color:${darkgreen};
     padding: 5%;
     margin: 2%;
@@ -197,7 +200,7 @@ export const Hotel_image = styled.Image`
     width: 80%;
     height: 100px;
     align-self: center;
-    margin-bottom: 15;
+    margin-bottom: 5px;
     border-radius: 10px;
 `
 
@@ -221,7 +224,7 @@ export const Welcome_page = styled.View`
 export const SelectionScreenColumnHotel = styled.View`
 
     justify-content: center;
-    border-radius: 20px;
+    border-top-right-radius: 40px;
     align-items:center;
     width: 100%;
     padding-top: 5%;
