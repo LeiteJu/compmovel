@@ -26,7 +26,7 @@ import {
   Line
 } from './styles'
 
-export default function Hotel1Screen({navigation}) {
+export default function Hotel2Screen({navigation}) {
 
   const [errorMessage, setErrorMessage] = useState(null)
   const [currentWeather, setCurrentWeather] = useState(null)
@@ -42,8 +42,8 @@ export default function Hotel1Screen({navigation}) {
 
     try {
           
-      const latitude= -9.069142712530162
-      const longitude= -35.241828887364136
+      const latitude= -23.63173559855039
+      const longitude= -46.72268763140538
 
       const weather_url = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&units=${unitsSystem}&appid=${WEATHER_API_KEY}`
 
@@ -76,11 +76,11 @@ export default function Hotel1Screen({navigation}) {
     return (
       <View>
         <Back>
-          <Picture source={require('./images/hotel1.jpg')}/>
+          <Picture source={require('./images/hotel2.jpg')}/>
           <Bottom>
-            <Title>Japaratinga Lounge Resort</Title>
-            <Resume>Maravilhoso resort localizado em Alagoas, próximo a algumas das melhores praias do país</Resume>
-            <Text style={{fontWeight:'bold'}}>Localização: Alagoas, Brasil</Text>
+            <Title>Palácio Tangará</Title>
+            <Resume>Maravilhoso hotel de luxo em São Paulo, que conta com incríveis instalações e um chefe com estrelas Michelan na cozinha</Resume>
+            <Text style={{fontWeight:'bold'}}>Localização: São Paulo, Brasil</Text>
             <Box>
               <Text style={{fontWeight:'bold'}}> Temperatura atual: {temp}ºC</Text>
               <Image style={styles.icon} source={{uri:ICONURL}} />

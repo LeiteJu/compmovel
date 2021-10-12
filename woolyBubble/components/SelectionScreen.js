@@ -24,14 +24,14 @@ export default function SelectionScreen({navigation}) {
                 <Text> Adicionar imagem e link para hotel 2 </Text>
                 <View style={styles.SelectionScreenHotelRow}>
                     <Text> Endereco do hotel 2 </Text>
-                    <Button title="Go to hotel" onPress={() => navigation.navigate('Hotel') } />
+                    <Button title="Go to hotel" onPress={() => navigation.navigate('Hotel2') } />
                 </View>
             </View>
             <View style={styles.SelectionScreenHotel}>
                 <Text> Adicionar imagem e link para hotel 3 </Text>
                 <View style={styles.SelectionScreenHotelRow}>
                     <Text> Endereco do hotel 3 </Text>
-                    <Button title="Go back button" onPress={() => navigation.goBack() } />
+                    <Button title="Go to hotel" onPress={() => navigation.navigate('Hotel3') } />
                 </View>
             </View>
         </View>
