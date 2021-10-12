@@ -38,9 +38,6 @@ const doublefuncttion = ({temp}) => {
 export default function Hotel1Screen({navigation}) {
 
 
-  const value = {
-    hotel: 'Japaratinga', temp: {temp}
-  }
   const [errorMessage, setErrorMessage] = useState(null)
   const [currentWeather, setCurrentWeather] = useState(null)
   const [unitsSystem, setUnitSystem] = useState('metric')  // use imperial for fahrenheit

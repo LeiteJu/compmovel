@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Button, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, Button, StyleSheet, Image, TouchableOpacity, Alert} from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { FontAwesome } from '@expo/vector-icons';
@@ -25,7 +25,12 @@ import {
 import {Colors} from './styles' 
 
 export const { lightgreen, pink } = Colors;
-
+/*
+<TouchableOpacity
+                            onPress={() => navigation.navigate('Favorites')} >
+                                <FontAwesome name="heart" size={28} color="darkred" />
+                            </TouchableOpacity>
+*/
 export default function SelectionScreen({navigation}) {
     return (
         <View style={styles.SelectionScreen}>
@@ -45,7 +50,7 @@ export default function SelectionScreen({navigation}) {
                 <View style={styles.SelectionScreenHotelRowS}>
                         <View style={styles.SelectionScreenHotelRow}>
                             <TouchableOpacity
-                            onPress={() => navigation.navigate('Favorites')} >
+                            onPress={() => Alert.alert("Favoritos","Ainda em construção")} >
                                 <FontAwesome name="heart" size={28} color="darkred" />
                             </TouchableOpacity>
                             <Text style = {styles.SelectionScreenHotelAddress}> Japaratinga - AL </Text>
@@ -61,7 +66,7 @@ export default function SelectionScreen({navigation}) {
                 <View style={styles.SelectionScreenHotelRowS}>
                         <View style={styles.SelectionScreenHotelRow}>
                             <TouchableOpacity
-                            onPress={() => navigation.navigate('Favorites')} >
+                            onPress={() => Alert.alert("Favoritos","Ainda em construção")} >
                                 <FontAwesome name="heart" size={28} color="darkred" />
                             </TouchableOpacity>
                             <Text style = {styles.SelectionScreenHotelAddress}> São Paulo - SP </Text>
@@ -77,7 +82,7 @@ export default function SelectionScreen({navigation}) {
                 <View style={styles.SelectionScreenHotelRowS}>
                         <View style={styles.SelectionScreenHotelRow}>
                             <TouchableOpacity
-                            onPress={() => navigation.navigate('Favorites')} >
+                            onPress={() => Alert.alert("Favoritos","Ainda em construção")} >
                                 <FontAwesome name="heart" size={28} color="darkred" />
                             </TouchableOpacity>
                             <Text style = {styles.SelectionScreenHotelAddress}> Gramado - RS </Text>
