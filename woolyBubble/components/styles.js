@@ -181,14 +181,14 @@ export const SelectionScreenHotel = styled.View`
     border-width: 2px;
     border-color: ${mediumgray};
     background-color: ${white};
-    padding-horizontal: 10%;
+    padding-horizontal: 8%;
     width: 90%;
     margin: 1%
 `
 
 export const Hotel_Title = styled.Text`
-    font-size: 16px;
-    margin-vertical: 3%;
+    font-size: 14px;
+    margin-vertical: 1%;
     letter-spacing: 1px;
     color: ${darkgreen}
 `
@@ -197,7 +197,8 @@ export const Hotel_image = styled.Image`
     width: 80%;
     height: 100px;
     align-self: center;
-    margin-bottom: 15
+    margin-bottom: 15;
+    border-radius: 10px;
 `
 
 export const Welcome_Text = styled.Text`
@@ -213,7 +214,7 @@ export const Welcome_page = styled.View`
     border-radius: 10px;
     background-color: ${pink};
     width: 100%;
-    padding: 3%;
+    padding: 2%;
 
 `
 
@@ -223,6 +224,8 @@ export const SelectionScreenColumnHotel = styled.View`
     border-radius: 20px;
     align-items:center;
     width: 100%;
+    padding-top: 5%;
+    flex:1;
     background-color: ${white}; 
 
 `
@@ -237,6 +240,22 @@ export const GoTo = styled.TouchableOpacity`
 
 
 `
+export const Back_Green = styled.View`
 
-// justify-content: center;
-// align-items: flex-start;
+    background-color:${lightgreen};
+    padding: 5%;
+    flex: 1;
+
+`
+
+export const Book_Button = styled.TouchableOpacity`
+
+    width: 70%;
+    height: 20%;
+    border-radius: 20px;
+    background-color:${lightgreen};
+    padding: 5%;
+    margin: 2%;
+    margin-bottom: 5%;
+    
+`

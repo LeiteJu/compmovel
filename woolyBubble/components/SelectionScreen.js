@@ -19,7 +19,8 @@ import {
     Welcome_page,
     SelectionScreenColumnHotel,
     GoTo,
-    ButtonText} from './styles'
+    ButtonText,
+    Book_Button} from './styles'
 
 import {Colors} from './styles' 
 
@@ -32,17 +33,17 @@ export default function SelectionScreen({navigation}) {
         {/* <Text> Olá, pessoa! </Text>
 		<Text >Hotéis mais amados:</Text> */}
         <Welcome_page>
-            <Welcome_Text>Olá, seja bem vinde!</Welcome_Text>
+            <Welcome_Text>Nossos hoteis mais amados:</Welcome_Text>
         </Welcome_page>
         <SelectionScreenColumnHotel style={{flex:1}}>
-            <Welcome_Text style={{fontWeight: 'bold', marginTop: '3%'}}>Nossos hoteis mais amados:</Welcome_Text>
+            {/* <Welcome_Text style={{fontWeight: 'bold', marginTop: '3%'}}>Nossos hoteis mais amados:</Welcome_Text> */}
             <SelectionScreenHotel>
                 <Hotel_Title>Japaratinga Lounge Resort</Hotel_Title>
                 <Hotel_image source={require('./images/hotel1.jpg')} />
                 <View style={styles.SelectionScreenHotelRowS}>
                         <View style={styles.SelectionScreenHotelRow}>
                             <TouchableOpacity
-                            onPress={() => alert("Event catched!")} >
+                            onPress={() => navigation.navigate('Favorites')} >
                                 <FontAwesome name="heart" size={28} color="darkred" />
                             </TouchableOpacity>
                             <Text style = {styles.SelectionScreenHotelAddress}> Japaratinga - AL </Text>
@@ -58,7 +59,7 @@ export default function SelectionScreen({navigation}) {
                 <View style={styles.SelectionScreenHotelRowS}>
                         <View style={styles.SelectionScreenHotelRow}>
                             <TouchableOpacity
-                            onPress={() => alert("Event catched!")} >
+                            onPress={() => navigation.navigate('Favorites')} >
                                 <FontAwesome name="heart" size={28} color="darkred" />
                             </TouchableOpacity>
                             <Text style = {styles.SelectionScreenHotelAddress}> São Paulo - SP </Text>
@@ -74,7 +75,7 @@ export default function SelectionScreen({navigation}) {
                 <View style={styles.SelectionScreenHotelRowS}>
                         <View style={styles.SelectionScreenHotelRow}>
                             <TouchableOpacity
-                            onPress={() => alert("Event catched!")} >
+                            onPress={() => navigation.navigate('Favorites')} >
                                 <FontAwesome name="heart" size={28} color="darkred" />
                             </TouchableOpacity>
                             <Text style = {styles.SelectionScreenHotelAddress}> Gramado - RS </Text>
@@ -84,6 +85,14 @@ export default function SelectionScreen({navigation}) {
                     </View>
                 </View>
             </SelectionScreenHotel>
+            <View style={styles.SelectionScreenHotelRowS}>
+                <View style={styles.SelectionScreenHotelRow}>
+                    <Book_Button onPress={() => navigation.navigate('Booking')}>
+                        <ButtonText>Suas reservas</ButtonText>
+                    </Book_Button>
+                </View>
+            </View>
+            
         </SelectionScreenColumnHotel>
 	  </View>
     )
