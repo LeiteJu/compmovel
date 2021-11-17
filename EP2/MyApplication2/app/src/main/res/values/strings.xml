@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Wolly Bubble!</string>
+    <string name="welcome_icon_description">Hotel icon</string>
+    <string name="welcome_error_msg">Something went wrong!</string>
+</resources>
