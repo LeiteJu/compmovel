@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "113371726289",
+    "project_id": "wollybubble-1637041280876",
+    "storage_bucket": "wollybubble-1637041280876.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113371726289:android:749ac168ef3ee376aea0f0",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113371726289-oe94l3tmjt1ps8j1a3oddir5iclqkgng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "db804ad8e70411bba8789c99c4ea21810387f93a"
+          }
+        },
+        {
+          "client_id": "113371726289-cme0vs6otjcg9tava44anu26i14q6dt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXJ8dKuA-AwaVjOUYBRH9jYl135HVeODk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113371726289-cme0vs6otjcg9tava44anu26i14q6dt1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

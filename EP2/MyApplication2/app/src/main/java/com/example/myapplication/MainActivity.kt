@@ -1,13 +1,12 @@
 package com.example.myapplication
 
-import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
-import androidx.core.app.ActivityCompat.startActivityForResult
 
 import android.content.Intent
 import android.media.Image
@@ -16,58 +15,51 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 const val RC_SIGN_IN = 1122
-var name : String = ""
+const val TAG = "GoogleActivity"
 
 class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+
+    private lateinit var auth: FirebaseAuth
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
+
+
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
     // Configure sign-in to request the user's ID, email address, and basic
     // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-    val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        // Configure Google Sign In
+        val gso = GoogleSignInOptions
+            .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.dft_web_client_id))
             .requestEmail()
             .build()
 
         // Build a GoogleSignInClient with the options specified by gso.
-    val mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        findViewById<SignInButton>(R.id.google_sign_in_button).visibility = View.VISIBLE
-        findViewById<SignInButton>(R.id.google_sign_in_button).setSize(SignInButton.SIZE_STANDARD)
-        findViewById<SignInButton>(R.id.google_sign_in_button).setOnClickListener{
-            val signInIntent = mGoogleSignInClient.signInIntent
-            startActivityForResult(signInIntent, RC_SIGN_IN)
 
-            val acct = GoogleSignIn.getLastSignedInAccount(this)
-            // If login went well
-            if (acct != null) {
-                val personName = acct.displayName
-                //val personGivenName = acct.givenName
-                //val personFamilyName = acct.familyName
-                //val personEmail = acct.email
-                //val personId = acct.id
+        // ...
+        // Initialize Firebase Auth
+        auth = Firebase.auth
 
-                // Run hotels page
-                val secondActivityIntent = Intent(
-                    this,
-                    HotelsActivity::class.java
-                )
-                //startActivity(secondActivityIntent)
+        findViewById<SignInButton>(R.id.google_sign_in_button).setOnClickListener {
+            val signInIntent: Intent = mGoogleSignInClient.signInIntent
 
-                findViewById<SignInButton>(R.id.google_sign_in_button).visibility = View.GONE
-                findViewById<Button>(R.id.welcome_nextScreen).visibility = View.VISIBLE
-                findViewById<Button>(R.id.welcome_btnGoogle).visibility = View.GONE
-                findViewById<Button>(R.id.welcome_btnFacebook).visibility = View.GONE
-            }
-
+            Log.d(TAG, "onClick: begin Google SignIn")
+        //    startActivityForResult(signInIntent, RC_SIGN_IN)
+            signIn()
         }
-
-
 
 
         // button for next screen
@@ -80,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -87,27 +80,47 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == RC_SIGN_IN) {
             // The Task returned from this call is always completed, no need to attach
             // a listener.
+            Log.d(TAG, "onActivityResult: Google SignIn intent result")
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            handleSignInResult(task)
+
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                val account = task.getResult(ApiException::class.java)!!
+                Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
+                firebaseAuthWithGoogle(account.idToken!!)
+            } catch (e: ApiException) {
+                // Google Sign In failed, update UI appropriately
+                Log.w(TAG, "Google sign in failed", e)
+                Log.w(TAG, "signInResult: failed code=" + e.getStatusCode());
+            }
         }
     }
 
-    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
-        try {
-            val account: GoogleSignInAccount = completedTask.getResult(ApiException::class.java)
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "signInWithCredential:success")
+                    val user = auth.currentUser
 
-            // Signed in successfully, show authenticated UI.
+                    //user.displayName
+                    findViewById<SignInButton>(R.id.google_sign_in_button).visibility = View.VISIBLE
+                    findViewById<Button>(R.id.welcome_nextScreen).visibility = View.VISIBLE
+                    findViewById<TextView>(R.id.welcome_error_msg).visibility = View.GONE
 
-            findViewById<SignInButton>(R.id.google_sign_in_button).visibility = View.VISIBLE
-            findViewById<TextView>(R.id.welcome_error_msg).visibility = View.VISIBLE
-            name = account.displayName
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    findViewById<LinearLayout>(R.id.welcome_container).visibility = View.GONE
+                    findViewById<TextView>(R.id.welcome_error_msg).visibility = View.VISIBLE
+                }
+            }
+    }
 
-        } catch (e: ApiException) {
-            // The ApiException status code indicates the detailed failure reason.
-                println("oi")
-            Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
-            findViewById<LinearLayout>(R.id.welcome_container).visibility = View.GONE
-            findViewById<TextView>(R.id.welcome_error_msg).visibility = View.VISIBLE
-        }
+    private fun signIn() {
+        val signInIntent = mGoogleSignInClient.signInIntent
+        startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 }
