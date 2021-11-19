@@ -72,11 +72,11 @@
             android:background="@color/medium_gray">
 
             <TextView
-                android:id="@+id/hotel_tempText"
+                android:id="@+id/hotel1_tempText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Temperatura atual: :temp:°C"
+                android:text="Temperatura: carregando :)"
             />
 
             <ImageView
@@ -97,7 +97,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/hotel_btnVoltar"
+                    android:id="@+id/hotel1_btnVoltar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
