@@ -70,8 +70,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="280dp"
-                            android:layout_height="140dp"
+                            android:layout_width="300dp"
+                            android:layout_height="130dp"
                             android:layout_gravity="center"
                             android:padding="15dp"
                             android:scaleType="center"
@@ -116,7 +116,7 @@
 
                         <ImageView
                             android:layout_width="300dp"
-                            android:layout_height="140dp"
+                            android:layout_height="130dp"
                             android:layout_gravity="center"
                             android:padding="15dp"
                             android:scaleType="center"
@@ -161,7 +161,7 @@
 
                         <ImageView
                             android:layout_width="300dp"
-                            android:layout_height="140dp"
+                            android:layout_height="130dp"
                             android:layout_gravity="center"
                             android:padding="15dp"
                             android:scaleType="center"

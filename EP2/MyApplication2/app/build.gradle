@@ -45,8 +45,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
     implementation 'com.google.firebase:firebase-messaging-ktx'
     implementation 'com.google.firebase:firebase-inappmessaging-display-ktx:20.1.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     testImplementation 'junit:junit:4.13.2'
@@ -63,8 +63,11 @@ dependencies {
     // google login
     // Also declare the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
-    implementation 'com.google.android.gms:play-services-auth:16.0.1'
     // c08uG9LnQuCP1crv_uCA4i
+
+    // maps
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.0'
 
     // navbar
 //    implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -72,3 +75,4 @@ dependencies {
 //    implementation 'androidx.appcompat:appcompat:1.0.2'
 //    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }
+

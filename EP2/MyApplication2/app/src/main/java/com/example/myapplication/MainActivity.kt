@@ -11,10 +11,7 @@ import com.google.android.gms.common.SignInButton
 import android.content.Intent
 import android.media.Image
 import android.util.Log
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
@@ -109,6 +106,14 @@ class MainActivity : AppCompatActivity() {
                     findViewById<SignInButton>(R.id.google_sign_in_button).visibility = View.VISIBLE
                     findViewById<Button>(R.id.welcome_nextScreen).visibility = View.VISIBLE
                     findViewById<TextView>(R.id.welcome_error_msg).visibility = View.GONE
+                    findViewById<TextView>(R.id.welcome_nextScreen).visibility = View.GONE
+
+                    Toast.makeText(applicationContext, "Bem vinde, ${user?.displayName}!", Toast.LENGTH_SHORT).show()
+                    val secondActivityIntent = Intent(
+                        this,
+                        HotelsActivity::class.java
+                    )
+                    startActivity(secondActivityIntent)
 
                 } else {
                     // If sign in fails, display a message to the user.
