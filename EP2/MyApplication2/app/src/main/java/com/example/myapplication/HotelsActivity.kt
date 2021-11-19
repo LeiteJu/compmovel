@@ -33,7 +33,7 @@ class HotelsActivity : AppCompatActivity() {
         btnHotel3.setOnClickListener {
             val secondActivityIntent = Intent(
                 this,
-                Hotel1Activity::class.java
+                Hotel3Activity::class.java
             )
             startActivity(secondActivityIntent)
         }

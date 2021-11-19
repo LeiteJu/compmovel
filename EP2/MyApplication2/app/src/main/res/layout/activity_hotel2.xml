@@ -26,7 +26,7 @@
             <ImageView
                 android:id="@+id/hotel2_hotelImg"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="310dp"
                 android:scaleType="center"
                 android:src="@drawable/hotel2"
                 />
@@ -35,7 +35,7 @@
         <LinearLayout
             android:id="@+id/hotel2_descriptionContainer"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="110dp"
             android:orientation="vertical"
             android:background="@color/white"
             android:layout_weight="0.4">
@@ -45,22 +45,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=":Nome do Hotel:"
-                android:textSize="24sp"
+                android:text="@string/title2"
+                android:textSize="20sp"
                 android:layout_margin="10dp"
                 android:textColor="@color/dark_green"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=":Descricao do hotel:"
-                android:textSize="18sp"
+                android:text="Maravilhoso hotel de luxo em São Paulo, que conta com incríveis instalações e um chefe com estrelas Michelan na cozinha"
+                android:textSize="16sp"
                 android:layout_marginStart="15dp"
                 android:textColor="@color/medium_gray"/>
             <TextView
                 android:id="@+id/hotel2_localization"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Localização: :Local:"
+                android:text="@string/loc2"
                 android:layout_marginBottom="15dp"
                 android:textSize="18sp"
                 android:layout_marginStart="15dp"/>

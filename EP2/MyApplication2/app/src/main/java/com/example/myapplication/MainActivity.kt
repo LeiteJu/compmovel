@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
 
                 } else {
                     // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    Log.w(TAG, "signInWithCreChallengesdential:failure", task.exception)
                     findViewById<LinearLayout>(R.id.welcome_container).visibility = View.GONE
                     findViewById<TextView>(R.id.welcome_error_msg).visibility = View.VISIBLE
                 }

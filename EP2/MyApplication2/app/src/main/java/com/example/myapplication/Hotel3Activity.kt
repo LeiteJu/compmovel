@@ -5,19 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-
-
-class Hotel1Activity : AppCompatActivity() {
-
-//    val url = URL("https://api.openweathermap.org/data/2.5/weather?")
-
+class Hotel3Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_hotel1)
+        setContentView(R.layout.activity_hotel2)
 
-        val hotel_btnVoltar = findViewById<Button>(R.id.hotel_btnVoltar)
+        val hotel2btnVoltar = findViewById<Button>(R.id.hotel2_btnVoltar)
 
-        hotel_btnVoltar.setOnClickListener {
+        hotel2btnVoltar.setOnClickListener {
             val secondActivityIntent = Intent(
                 this,
                 HotelsActivity::class.java

@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".Navbar"
+            android:exported="false"
+            android:label="@string/title_activity_navbar" />
+        <activity
+            android:name=".Hotel3Activity"
+            android:exported="false" />
+        <activity
             android:name=".Hotel2Activity"
             android:exported="false" />
         <activity

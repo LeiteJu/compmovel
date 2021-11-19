@@ -3,4 +3,14 @@
     <string name="welcome_icon_description">Hotel icon</string>
     <string name="welcome_error_msg">Something went wrong!</string>
     <string name="dft_web_client_id" translatable="false">113371726289-cme0vs6otjcg9tava44anu26i14q6dt1.apps.googleusercontent.com</string>
+    <string name="title1"><b>Japaratinga Lounge Resort</b></string>
+    <string name="loc1"><b>Localização:</b> Alagoas, Brasil</string>
+    <string name="title2"><b>Palácio Tangará</b></string>
+    <string name="loc2"><b>Localização:</b> São Paulo, Brasil</string>
+    <string name="title3"><b>ModeVie Boutique Hotel</b></string>
+    <string name="loc3"><b>Localização:</b> Gramado, Brasil</string>
+    <string name="title_activity_navbar">Navbar</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
