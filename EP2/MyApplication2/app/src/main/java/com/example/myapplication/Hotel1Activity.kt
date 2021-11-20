@@ -27,11 +27,14 @@ class Hotel1Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_hotel1)
 
-        val hotel1_btnVoltar = findViewById<Button>(R.id.hotel1_btnVoltar)
+        val hotel_btnVoltar = findViewById<Button>(R.id.hotel_btnVoltar)
 
-        hotel1_btnVoltar.setOnClickListener {
+        weatherTask().execute()
+
+        hotel_btnVoltar.setOnClickListener {
             val secondActivityIntent = Intent(
                 this,
                 HotelsActivity::class.java
@@ -39,7 +42,6 @@ class Hotel1Activity : AppCompatActivity() {
             startActivity(secondActivityIntent)
         }
 
-        weatherTask().execute()
     }
 
     inner class weatherTask() : AsyncTask<String, Void, String>() {

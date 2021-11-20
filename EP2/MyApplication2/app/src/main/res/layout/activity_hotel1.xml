@@ -97,11 +97,12 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/hotel1_btnVoltar"
+                    android:id="@+id/hotel_btnVoltar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginStart="15sp"
+                    android:visibility="visible"
                     android:text="Voltar"/>
 
                 <Button

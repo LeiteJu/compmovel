@@ -29,14 +29,14 @@
 
                 >
 
-<!--                <TextView-->
-<!--                    android:id="@+id/hotels_welcomeText"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="10sp"-->
-<!--                    android:layout_marginTop="10sp"-->
-<!--                    android:text="Bem vinde, Pessoa!"-->
-<!--                    android:textSize="12dp" />-->
+                <!--                <TextView-->
+                <!--                    android:id="@+id/hotels_welcomeText"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="10sp"-->
+                <!--                    android:layout_marginTop="10sp"-->
+                <!--                    android:text="Bem vinde, Pessoa!"-->
+                <!--                    android:textSize="12dp" />-->
 
                 <TextView
                     android:id="@+id/hotels_featuredHotels"
@@ -65,9 +65,9 @@
                     <LinearLayout
                         android:id="@+id/hotels_featuredHotel1"
                         android:layout_width="match_parent"
-                        android:padding="10dp"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
                         <ImageView
                             android:layout_width="300dp"
@@ -111,8 +111,8 @@
                         android:id="@+id/hotels_featuredHotel2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
                         <ImageView
                             android:layout_width="300dp"
@@ -156,8 +156,8 @@
                         android:id="@+id/hotels_featuredHotel3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
                         <ImageView
                             android:layout_width="300dp"
@@ -201,33 +201,59 @@
             </ScrollView>
 
             <LinearLayout
-                android:id="@+id/n"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="40dp"
+                android:orientation="horizontal">
 
-                <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/container"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <!--                    android:paddingTop="?attr/actionBarSize">-->
+                <Button
+                    android:id="@+id/maps_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginHorizontal="15dp"
+                    android:backgroundTint="#00e699"
+                    android:paddingHorizontal="20dp"
+                    android:text="Ver mapa" />
 
-                    <com.google.android.material.bottomnavigation.BottomNavigationView
-                        android:id="@+id/nav_view"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginEnd="0dp"
-                        android:background="?android:attr/windowBackground"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:menu="@menu/bottom_nav_menu" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginHorizontal="15dp"
+                    android:backgroundTint="#00e699"
+                    android:paddingHorizontal="20dp"
+                    android:text="Reservas" />
 
             </LinearLayout>
+
+            <!--            <LinearLayout-->
+            <!--                android:id="@+id/n"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--                    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+            <!--                    android:id="@+id/container"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content">-->
+            <!--                    &lt;!&ndash;                    android:paddingTop="?attr/actionBarSize">&ndash;&gt;-->
+
+            <!--                    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+            <!--                        android:id="@+id/nav_view"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="0dp"-->
+            <!--                        android:layout_marginEnd="0dp"-->
+            <!--                        android:background="?android:attr/windowBackground"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--                        app:layout_constraintRight_toRightOf="parent"-->
+            <!--                        app:menu="@menu/bottom_nav_menu" />-->
+
+
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--            </LinearLayout>-->
         </LinearLayout>
     </RelativeLayout>
 

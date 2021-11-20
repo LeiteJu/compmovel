@@ -8,11 +8,11 @@
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/book"
         android:title="Reservas" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/maps_btn"
         android:icon="@drawable/ic_baseline_location_on_24"
         android:title="Mapa" />
 

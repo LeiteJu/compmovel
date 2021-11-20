@@ -26,9 +26,9 @@ class Hotel3Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hotel3)
 
-        val hotel2btnVoltar = findViewById<Button>(R.id.hotel3_btnVoltar)
+        val hotel3btnVoltar = findViewById<Button>(R.id.hotel3_btnVoltar)
 
-        hotel2btnVoltar.setOnClickListener {
+        hotel3btnVoltar.setOnClickListener {
             val secondActivityIntent = Intent(
                 this,
                 HotelsActivity::class.java
@@ -75,14 +75,14 @@ class Hotel3Activity : AppCompatActivity() {
 
                 val updatedAt:Long = jsonObj.getLong("dt")
 //                val updatedAtText = "Updated at: "+ SimpleDateFormat("dd/MM/yyyy hh:mm a", Locale.ENGLISH).format(Date(updatedAt*1000))
-                val temp2 = "Temperatura: " + main.getString("temp")+"°C"
+                val temp3 = "Temperatura: " + main.getString("temp")+"°C"
                 /* Views populated, Hiding the loader, Showing the main design */
 //                findViewById<ProgressBar>(R.id.loader).visibility = View.GONE
 //                findViewById<RelativeLayout>(R.id.mainContainer).visibility = View.VISIBLE
 
                 setContentView(R.layout.activity_hotel3)
                 val textView = findViewById(R.id.hotel3_tempText) as TextView
-                textView.text = temp2
+                textView.text = temp3
 
             } catch (e: Exception) {
                 setContentView(R.layout.activity_hotel3)
