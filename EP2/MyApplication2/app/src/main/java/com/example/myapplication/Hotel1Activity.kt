@@ -90,6 +90,7 @@ class Hotel1Activity : AppCompatActivity() {
                 setContentView(R.layout.activity_hotel1)
                 val textView = findViewById(R.id.hotel1_tempText) as TextView
                 textView.text = temp1
+//                textView.text = main.getString()
 
             } catch (e: Exception) {
                 setContentView(R.layout.activity_hotel1)

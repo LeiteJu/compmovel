@@ -87,7 +87,7 @@
                     android:layout_gravity="center"
                     android:layout_height="50dp"
                     android:layout_marginBottom="15sp"
-                    android:src="@drawable/ic_hotel_solid"
+                    android:src="@drawable/cloud"
                     />
             </LinearLayout>
 
@@ -98,13 +98,19 @@
                 android:layout_margin="15sp"
                 android:orientation="horizontal">
 
+<!--                <Button-->
+<!--                    android:id="@+id/hotel_btnReservar"-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Reservar" />-->
+
                 <Button
                     android:id="@+id/hotel2_btnVoltar"
                     android:minHeight="50dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15sp"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:text="Voltar"/>
 
                 <Button
