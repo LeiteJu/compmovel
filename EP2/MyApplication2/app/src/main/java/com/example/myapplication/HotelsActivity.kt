@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 class HotelsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,6 +16,7 @@ class HotelsActivity : AppCompatActivity() {
         val btnHotel2 = findViewById<Button>(R.id.hotels_btn2)
         val btnHotel3 = findViewById<Button>(R.id.hotels_btn3)
         val btnmaps = findViewById<Button>(R.id.maps_btn)
+        val btnbook = findViewById<Button>(R.id.book_btn)
 
         btnHotel1.setOnClickListener {
             val secondActivityIntent = Intent(
@@ -45,6 +48,18 @@ class HotelsActivity : AppCompatActivity() {
                 MapsActivity::class.java
             )
             startActivity(secondActivityIntent)
+        }
+
+        btnbook.setOnClickListener {
+
+            val buider = AlertDialog.Builder(this)
+            buider.setMessage("Ainda em construção :/")
+            buider.setPositiveButton("Ok") {_,_ ->
+                Toast.makeText(this, "Obrigada pela compreensão", Toast.LENGTH_SHORT).show()
+            }
+
+            val dialog: AlertDialog = buider.create()
+            dialog.show()
         }
 
     }

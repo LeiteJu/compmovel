@@ -32,8 +32,6 @@ class Hotel1Activity : AppCompatActivity() {
 
         val hotel_btnVoltar = findViewById<Button>(R.id.hotel_btnVoltar)
 
-        weatherTask().execute()
-
         hotel_btnVoltar.setOnClickListener {
             val secondActivityIntent = Intent(
                 this,
@@ -42,6 +40,7 @@ class Hotel1Activity : AppCompatActivity() {
             startActivity(secondActivityIntent)
         }
 
+        weatherTask().execute()
     }
 
     inner class weatherTask() : AsyncTask<String, Void, String>() {

@@ -35,6 +35,8 @@ class Hotel3Activity : AppCompatActivity() {
             )
             startActivity(secondActivityIntent)
         }
+
+        weatherTask().execute()
     }
 
     inner class weatherTask() : AsyncTask<String, Void, String>() {
